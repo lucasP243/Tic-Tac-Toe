@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Morpion</title>
+
+        <!-- jQuery -->
+        <script 
+            src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+            integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" 
+            crossorigin="anonymous">
+        </script>
+
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+
+    <body>
+        <header class="flex-row">
+            <div class="title flex-row">
+                <h1>Morpion</h1>
+                <h3 style="padding: 4px 1em 0;">Jouez au morpion</h3>
+            </div>
+
+            <nav>
+                <ul class="flex-row right">
+                    <li>
+                        <a href="javascript:reload();">Nouvelle partie</a>
+                    </li>
+                    <li>
+                        <label>Difficulté : </label>
+                        <select id="difficulty">
+                            <option value="easy" selected>Facile</option>
+                            <option value="normal" disabled>Normale</option>
+                            <option value="impossible">Impossible</option>
+                        </select>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="container flex-row">
+            <span class="result player-win">Player wins !</span>
+
+            <div id="game">
+                <table>
+                    <tbody>
+                        <tr class="r1">
+                            <th class="c1 case"></th>
+                            <th class="c2 case"></th>
+                            <th class="c3 case"></th>
+                        </tr>
+                        <tr class="r2">
+                            <th class="c1 case"></th>
+                            <th class="c2 case"></th>
+                            <th class="c3 case"></th>
+                        </tr>
+                        <tr class="r3">
+                            <th class="c1 case"></th>
+                            <th class="c2 case"></th>
+                            <th class="c3 case"></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="loader-container">
+                    <div class="loader"></div>
+                    <p class="result tie">Its a tie !</p>
+                </div>
+            </div>
+
+            <span class="result enemy-win">Computer wins !</span>
+        </div>
+    </body>
+    <script type="text/javascript" src="./js/tictactoe.js"></script>
+</html>

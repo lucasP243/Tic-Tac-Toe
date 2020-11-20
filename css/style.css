@@ -1,0 +1,165 @@
+*, *:focus, *:hover{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    outline:none;
+}
+
+body {
+    margin: 0;
+    background-color: #303030;
+}
+
+h1, h3 {
+    display: block;
+}
+
+.flex-row {
+    display: flex;
+    align-items: center;
+    align-content: stretch;
+}
+
+header {
+    background-image: linear-gradient(20deg, #600 49%, #000 50%, #060 51%);
+    box-shadow: 0px 0px 15px 15px rgba(0, 0, 0, .75);
+}
+
+.title {
+    margin-left: 3em;
+    flex: 1 0 auto;
+}
+
+nav {
+    height: 100%;
+}
+
+nav ul {
+    margin: 0;
+    list-style: none;
+}
+
+nav li {
+    margin-right: 1em;
+    padding: 0.8em 2em;
+    font-size: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav select {
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+}
+
+nav option {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.container {
+    margin-top: 5em;
+}
+
+#game {
+    flex: 0 0 auto;
+    position: relative;
+}
+
+#game.busy, 
+#game.ended {
+    pointer-events: none;
+}
+
+#game table {
+    border-collapse: collapse;
+    box-shadow: 0px 0px 15px 5px rgba(0, 0, 0, .75);
+}
+
+.loader-container {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .75);
+}
+
+#game.busy .loader-container,
+#game.ended .loader-container {
+    visibility: visible;
+}
+
+.loader {
+    visibility: hidden;
+    position: absolute;
+    border: 12px solid transparent;
+    border-top: 12px solid #a3a3a3;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    top: 50%;
+    left: 50%;
+    animation: spin 1s ease infinite;
+}
+
+#game.busy .loader {
+    visibility: visible;
+}
+  
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.case {
+    height: 200px;
+    width: 200px;
+    border: 2px solid black;
+    background-size: cover;
+}
+
+.folded {
+    cursor: pointer;
+    background-image: url(../img/fond.png);
+}
+
+.red {
+    background-image: url(../img/fond1.png);
+}
+
+.green {
+    background-image: url(../img/fond2.png);
+}
+
+.result {
+    font-size: 3em;
+    flex: 1 0 auto;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .8s ease;
+}
+
+.result.show {
+    opacity: 1;
+}
+
+.player-win {
+    color: #700;
+}
+
+.enemy-win {
+    color: #070;
+}
+
+.tie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    color: white;
+
+}
